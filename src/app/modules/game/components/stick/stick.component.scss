@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+
+  width: 20px;
+  height: 400px;
+
+  background-color: burlywood;
+
+  &.selected {
+    background-color: rebeccapurple;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="board">
+  <h3>Board</h3>
+  <div class="board__items">
+    <game-stick
+      #stick
+      class="board__item"
+      *ngFor="let _ of maximumSticks | iterates; let i = index"
+      (click)="canSelectStick && selectStick(stick)"
+    ></game-stick>
+  </div>
+  <div *ngIf="canNextTurn" class="board__actions">
+    <button (click)="changeTurn.emit()">Next turn</button>
+  </div>
+
+  {{ manager.winner$ | async }}
+</div>

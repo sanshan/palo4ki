@@ -1,0 +1,9 @@
+<ng-container *ngIf="index$ | async as playersCount">
+  <div class="registration">
+    <h2 class="registration-title">Player {{ index$ | async }}</h2>
+
+    <form [formGroup]="form" (ngSubmit)="register(form.value, playersCount)" class="registration-form">
+      <input formControlName="name" required />
+    </form>
+  </div>
+</ng-container>
